@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button  id="button">移除节点</button>
+  <ul id="list">
+    <li>节点</li>
+  </ul>
+  <script>
+    // 节点分离导致内存泄漏，使用detached检测
+    const button = document.getElementById("button")
+    // const list = document.getElementById("list") // 放在这里会出问题
+    button.addEventListener("click",function() {
+      // 放在在就不会
+      const list = document.getElementById("list")
+      list.remove()
+    })
+  </script>
+</body>
+
+</html>
